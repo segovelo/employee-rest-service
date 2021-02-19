@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.IanaLinkRelations;
 import org.springframework.hateoas.MediaTypes;
 import org.springframework.hateoas.mediatype.problem.Problem;
 import org.springframework.http.HttpHeaders;
@@ -63,6 +64,30 @@ class OrderController {
         .body(assembler.toModel(newOrder));
   }
   
+  @PutMapping("/orders/{id}")
+  ResponseEntity<?> updateOrder(@PathVariable Long id,@RequestBody Order newOrder) {
+
+    Order updatedOrder = orderRepository.findById(id)
+    		.map(order -> {
+    			   if(newOrder instanceof Order && 
+    			   newOrder.getDescription() != null && 
+    			   newOrder.getDescription() != "") 
+    				order.setDescription(newOrder.getDescription());
+    			return orderRepository.save(order);
+    		})
+    		.orElseGet(() -> {
+    	          newOrder.setId(id);
+    	          return orderRepository.save(newOrder);
+    	     });
+    		
+    	    EntityModel<Order> entityModel = assembler.toModel(updatedOrder);
+
+    	    return ResponseEntity //
+    	        .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri()) //
+    	        .body(entityModel);
+
+  }
+
   @PutMapping("/orders/{id}/complete")
   ResponseEntity<?> complete(@PathVariable Long id) {
 
@@ -82,7 +107,9 @@ class OrderController {
             .withDetail("You can't complete an order that is in the " + order.getStatus() + " status"));
   }
   
-  @DeleteMapping("/orders/{id}/cancel")
+  
+  
+  @PutMapping("/orders/{id}/cancel")
   ResponseEntity<?> cancel(@PathVariable Long id) {
 
     Order order = orderRepository.findById(id) //
@@ -99,5 +126,11 @@ class OrderController {
         .body(Problem.create() //
             .withTitle("Method not allowed") //
             .withDetail("You can't cancel an order that is in the " + order.getStatus() + " status"));
+  } // End of @PutMapping("/orders/{id}/cancel")
+  
+  @DeleteMapping("/orders/{id}")
+  ResponseEntity<?> delete(@PathVariable Long id) {
+	    orderRepository.deleteById(id);
+	    return ResponseEntity.noContent().build();
   }
 }

@@ -66,8 +66,9 @@ class EmployeeController {
 
     Employee updatedEmployee = repository.findById(id) //
         .map(employee -> {
-          employee.setName(newEmployee.getName());
-          employee.setRole(newEmployee.getRole());
+          if(newEmployee.getFirstName() != null )  employee.setFirstName(newEmployee.getFirstName());
+          if(newEmployee.getLastName() != null) employee.setLastName(newEmployee.getLastName());
+          if(newEmployee.getRole() != null) employee.setRole(newEmployee.getRole());
           return repository.save(employee);
         }) //
         .orElseGet(() -> {
