@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.IanaLinkRelations;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +32,7 @@ class EmployeeController {
 
   // Aggregate root
   // tag::get-aggregate-root[]
-  @GetMapping("/employees")
+  @GetMapping(path = "/employees")
   CollectionModel<EntityModel<Employee>> all() {
 
     List<EntityModel<Employee>> employees = repository.findAll().stream() //
@@ -41,7 +42,7 @@ class EmployeeController {
     return CollectionModel.of(employees, linkTo(methodOn(EmployeeController.class).all()).withSelfRel());
   } // end::get-aggregate-root[]
 
-  @PostMapping("/employees")
+  @PostMapping(path = "/employees")
   ResponseEntity<?> newEmployee(@RequestBody Employee newEmployee) {
 
     EntityModel<Employee> entityModel = assembler.toModel(repository.save(newEmployee));
@@ -52,7 +53,7 @@ class EmployeeController {
   }
   // Single item
   
-  @GetMapping("/employees/{id}")
+  @GetMapping(path = "/employees/{id}")
   EntityModel<Employee> one(@PathVariable Long id) {
 
      Employee employee = repository.findById(id) //
@@ -61,7 +62,7 @@ class EmployeeController {
      return assembler.toModel(employee);
   }
   
-  @PutMapping("/employees/{id}")
+  @PutMapping(path = "/employees/{id}")
   ResponseEntity<?> replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) {
 
     Employee updatedEmployee = repository.findById(id) //
@@ -83,9 +84,11 @@ class EmployeeController {
         .body(entityModel);
   }
   
-  @DeleteMapping("/employees/{id}")
+  @DeleteMapping(path = "/employees/{id}")
   ResponseEntity<?> deleteEmployee(@PathVariable Long id) {
-    repository.deleteById(id);
-    return ResponseEntity.noContent().build();
+	  if(repository.existsById(id))
+		  	repository.deleteById(id);
+	  else throw new EmployeeNotFoundException(id) ;
+	  return new ResponseEntity<>("Employee id: "+id+" deleted", HttpStatus.OK);
   }
 }
