@@ -4,7 +4,6 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.IanaLinkRelations;
@@ -36,19 +35,23 @@ class OrderController {
   @GetMapping("/orders")
   CollectionModel<EntityModel<Order>> all() {
 
-    List<EntityModel<Order>> orders = orderRepository.findAll().stream() //
-        .map(assembler::toModel) //
-        .collect(Collectors.toList());
+    List<EntityModel<Order>> orders =
+        orderRepository.findAll().stream() //
+            .map(assembler::toModel) //
+            .collect(Collectors.toList());
 
-    return CollectionModel.of(orders, //
+    return CollectionModel.of(
+        orders, //
         linkTo(methodOn(OrderController.class).all()).withSelfRel());
   }
 
   @GetMapping("/orders/{id}")
   EntityModel<Order> one(@PathVariable Long id) {
 
-    Order order = orderRepository.findById(id) //
-        .orElseThrow(() -> new OrderNotFoundException(id));
+    Order order =
+        orderRepository
+            .findById(id) //
+            .orElseThrow(() -> new OrderNotFoundException(id));
 
     return assembler.toModel(order);
   }
@@ -63,36 +66,41 @@ class OrderController {
         .created(linkTo(methodOn(OrderController.class).one(newOrder.getId())).toUri()) //
         .body(assembler.toModel(newOrder));
   }
-  
+
   @PutMapping("/orders/{id}")
-  ResponseEntity<?> updateOrder(@PathVariable Long id,@RequestBody Order newOrder) {
+  ResponseEntity<?> updateOrder(@PathVariable Long id, @RequestBody Order newOrder) {
 
-    Order updatedOrder = orderRepository.findById(id)
-    		.map(order -> {
-    			   if(newOrder instanceof Order && 
-    			   newOrder.getDescription() != null && 
-    			   newOrder.getDescription() != "") 
-    				order.setDescription(newOrder.getDescription());
-    			return orderRepository.save(order);
-    		})
-    		.orElseGet(() -> {
-    	          newOrder.setId(id);
-    	          return orderRepository.save(newOrder);
-    	     });
-    		
-    	    EntityModel<Order> entityModel = assembler.toModel(updatedOrder);
+    Order updatedOrder =
+        orderRepository
+            .findById(id)
+            .map(
+                order -> {
+                  if (newOrder instanceof Order
+                      && newOrder.getDescription() != null
+                      && newOrder.getDescription() != "")
+                    order.setDescription(newOrder.getDescription());
+                  return orderRepository.save(order);
+                })
+            .orElseGet(
+                () -> {
+                  newOrder.setId(id);
+                  return orderRepository.save(newOrder);
+                });
 
-    	    return ResponseEntity //
-    	        .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri()) //
-    	        .body(entityModel);
+    EntityModel<Order> entityModel = assembler.toModel(updatedOrder);
 
+    return ResponseEntity //
+        .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri()) //
+        .body(entityModel);
   }
 
   @PutMapping("/orders/{id}/complete")
   ResponseEntity<?> complete(@PathVariable Long id) {
 
-    Order order = orderRepository.findById(id) //
-        .orElseThrow(() -> new OrderNotFoundException(id));
+    Order order =
+        orderRepository
+            .findById(id) //
+            .orElseThrow(() -> new OrderNotFoundException(id));
 
     if (order.getStatus() == Status.IN_PROGRESS) {
       order.setStatus(Status.COMPLETED);
@@ -102,18 +110,20 @@ class OrderController {
     return ResponseEntity //
         .status(HttpStatus.METHOD_NOT_ALLOWED) //
         .header(HttpHeaders.CONTENT_TYPE, MediaTypes.HTTP_PROBLEM_DETAILS_JSON_VALUE) //
-        .body(Problem.create() //
-            .withTitle("Method not allowed") //
-            .withDetail("You can't complete an order that is in the " + order.getStatus() + " status"));
+        .body(
+            Problem.create() //
+                .withTitle("Method not allowed") //
+                .withDetail(
+                    "You can't complete an order that is in the " + order.getStatus() + " status"));
   }
-  
-  
-  
+
   @PutMapping("/orders/{id}/cancel")
   ResponseEntity<?> cancel(@PathVariable Long id) {
 
-    Order order = orderRepository.findById(id) //
-        .orElseThrow(() -> new OrderNotFoundException(id));
+    Order order =
+        orderRepository
+            .findById(id) //
+            .orElseThrow(() -> new OrderNotFoundException(id));
 
     if (order.getStatus() == Status.IN_PROGRESS) {
       order.setStatus(Status.CANCELLED);
@@ -123,14 +133,16 @@ class OrderController {
     return ResponseEntity //
         .status(HttpStatus.METHOD_NOT_ALLOWED) //
         .header(HttpHeaders.CONTENT_TYPE, MediaTypes.HTTP_PROBLEM_DETAILS_JSON_VALUE) //
-        .body(Problem.create() //
-            .withTitle("Method not allowed") //
-            .withDetail("You can't cancel an order that is in the " + order.getStatus() + " status"));
+        .body(
+            Problem.create() //
+                .withTitle("Method not allowed") //
+                .withDetail(
+                    "You can't cancel an order that is in the " + order.getStatus() + " status"));
   } // End of @PutMapping("/orders/{id}/cancel")
-  
+
   @DeleteMapping("/orders/{id}")
   ResponseEntity<?> delete(@PathVariable Long id) {
-	    orderRepository.deleteById(id);
-	    return ResponseEntity.noContent().build();
+    orderRepository.deleteById(id);
+    return ResponseEntity.noContent().build();
   }
 }

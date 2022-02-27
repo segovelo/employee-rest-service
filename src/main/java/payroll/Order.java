@@ -1,7 +1,6 @@
 package payroll;
 
 import java.util.Objects;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -51,12 +50,11 @@ class Order {
   @Override
   public boolean equals(Object o) {
 
-    if (this == o)
-      return true;
-    if (!(o instanceof Order))
-      return false;
+    if (this == o) return true;
+    if (!(o instanceof Order)) return false;
     Order order = (Order) o;
-    return Objects.equals(this.id, order.id) && Objects.equals(this.description, order.description)
+    return Objects.equals(this.id, order.id)
+        && Objects.equals(this.description, order.description)
         && this.status == order.status;
   }
 
@@ -67,6 +65,14 @@ class Order {
 
   @Override
   public String toString() {
-    return "Order{" + "id=" + this.id + ", description='" + this.description + '\'' + ", status=" + this.status + '}';
+    return "Order{"
+        + "id="
+        + this.id
+        + ", description='"
+        + this.description
+        + '\''
+        + ", status="
+        + this.status
+        + '}';
   }
 }
