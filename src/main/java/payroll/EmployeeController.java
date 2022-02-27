@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.IanaLinkRelations;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -85,7 +86,9 @@ class EmployeeController {
   
   @DeleteMapping("/employees/{id}")
   ResponseEntity<?> deleteEmployee(@PathVariable Long id) {
-    repository.deleteById(id);
-    return ResponseEntity.noContent().build();
+	if(repository.existsById(id))
+        repository.deleteById(id);
+	 else throw new EmployeeNotFoundException(id);
+    return new ResponseEntity<>("Employee with id: "+id+" was deleted", HttpStatus.OK);
   }
 }
