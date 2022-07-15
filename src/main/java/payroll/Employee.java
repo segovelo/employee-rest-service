@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.joda.time.DateTime;
+
 @Entity
 class Employee {
 
@@ -12,17 +14,18 @@ class Employee {
   private String firstName;
   private String lastName;
   private String role;
+  private DateTime dob;
 
-  Employee() {}
+  public Employee() {}
 
-  Employee(String name, String role) {
+  public Employee(String name, String role) {
     String[] parts = name.split(" ");
     this.firstName = parts[0];
     this.lastName = parts[1];
     this.role = role;
   }
 
-  Employee(String firstName, String lastName, String role) {
+  public Employee(String firstName, String lastName, String role) {
 
     this.firstName = firstName;
     this.lastName = lastName;
