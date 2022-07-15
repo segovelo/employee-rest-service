@@ -7,6 +7,8 @@ import javax.persistence.Id;
 
 import org.joda.time.DateTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 class Employee {
 
@@ -14,9 +16,10 @@ class Employee {
   private String firstName;
   private String lastName;
   private String role;
+  @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss")
   private DateTime dob;
 
-  public Employee() {}
+public Employee() {}
 
   public Employee(String name, String role) {
     String[] parts = name.split(" ");
@@ -31,8 +34,18 @@ class Employee {
     this.lastName = lastName;
     this.role = role;
   }
+  
+  
 
-  public String getName() {
+  public Employee(String firstName, String lastName, String role, DateTime dob) {
+	super();
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.role = role;
+	this.dob = dob;
+}
+
+public String getName() {
     return this.firstName + " " + this.lastName;
   }
 
@@ -73,6 +86,14 @@ class Employee {
   public void setRole(String role) {
     this.role = role;
   }
+  
+  public DateTime getDob() {
+	return dob;
+}
+
+public void setDob(DateTime dob) {
+	this.dob = dob;
+}
 
   @Override
   public boolean equals(Object o) {
