@@ -15,6 +15,7 @@ class LoadDatabase {
   CommandLineRunner initDatabase(EmployeeRepository repository, OrderRepository orderRepository) {
 
     return args -> {
+
       log.info(
           "Preloading "
               + repository.save(new Employee("Miguel", "Lacalle-Estrada", "Purchasing Director")));
@@ -35,6 +36,7 @@ class LoadDatabase {
       orderRepository.save(new Order("MacBook Pro", Status.COMPLETED));
       orderRepository.save(new Order("iPhone", Status.IN_PROGRESS));
       orderRepository.save(new Order("Hp Z2 G4 WorkStation", Status.IN_PROGRESS));
+
       orderRepository
           .findAll()
           .forEach(

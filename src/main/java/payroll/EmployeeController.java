@@ -30,7 +30,7 @@ class EmployeeController {
 
   // Aggregate root
   // tag::get-aggregate-root[]
-  @GetMapping("/employees")
+  @GetMapping(path = "/employees")
   CollectionModel<EntityModel<Employee>> all() {
 
     List<EntityModel<Employee>> employees =
@@ -42,7 +42,7 @@ class EmployeeController {
         employees, linkTo(methodOn(EmployeeController.class).all()).withSelfRel());
   } // end::get-aggregate-root[]
 
-  @PostMapping("/employees")
+  @PostMapping(path = "/employees")
   ResponseEntity<?> newEmployee(@RequestBody Employee newEmployee) {
 
     EntityModel<Employee> entityModel = assembler.toModel(repository.save(newEmployee));
@@ -53,7 +53,7 @@ class EmployeeController {
   }
   // Single item
 
-  @GetMapping("/employees/{id}")
+  @GetMapping(path = "/employees/{id}")
   EntityModel<Employee> one(@PathVariable Long id) {
 
     Employee employee =
@@ -64,7 +64,7 @@ class EmployeeController {
     return assembler.toModel(employee);
   }
 
-  @PutMapping("/employees/{id}")
+  @PutMapping(path = "/employees/{id}")
   ResponseEntity<?> replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) {
 
     Employee updatedEmployee =
@@ -92,10 +92,11 @@ class EmployeeController {
         .body(entityModel);
   }
 
-  @DeleteMapping("/employees/{id}")
+  @DeleteMapping(path = "/employees/{id}")
   ResponseEntity<?> deleteEmployee(@PathVariable Long id) {
-    if (repository.existsById(id)) repository.deleteById(id);
-    else throw new EmployeeNotFoundException(id);
-    return new ResponseEntity<>("Employee with id: " + id + " was deleted", HttpStatus.OK);
+	  if(repository.existsById(id))
+		  	repository.deleteById(id);
+	  else throw new EmployeeNotFoundException(id) ;
+	  return new ResponseEntity<>("Employee id: "+id+" deleted", HttpStatus.OK);
   }
 }
