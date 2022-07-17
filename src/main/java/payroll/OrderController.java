@@ -144,7 +144,6 @@ class OrderController {
   @DeleteMapping("/orders/{id}")
   ResponseEntity<?> delete(@PathVariable Long id) {
     orderRepository.deleteById(id);
-    return ResponseEntity.noContent().build();
 	  if(orderRepository.existsById(id)) 
 	       orderRepository.deleteById(id);
 	  else throw new OrderNotFoundException(id) ;
