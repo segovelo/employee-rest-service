@@ -4,13 +4,13 @@ import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
 import org.joda.time.DateTime;
-
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import com.fasterxml.jackson.annotation.JsonFormat;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import static payroll.Utilities.JSON_FORMAT;
 
 @Entity
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -23,8 +23,9 @@ class Employee {
   private String lastName;
   @JsonProperty("role")
   private String role;
-  @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss")
+  @JsonFormat(shape=JsonFormat.Shape.STRING, pattern=JSON_FORMAT)
   private DateTime dob;
+  
 
 public Employee() {}
 
@@ -51,6 +52,16 @@ public Employee() {}
 	this.role = role;
 	this.dob = dob;
 }
+  
+  public Employee(String firstName, String lastName, String role, String dob) {
+	super();
+	DateTimeFormatter formatter = DateTimeFormat.forPattern(JSON_FORMAT);
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.role = role;
+	this.dob = formatter.parseDateTime(dob);
+}
+
 
 public String getName() {
     return this.firstName + " " + this.lastName;
@@ -101,6 +112,12 @@ public String getName() {
 public void setDob(DateTime dob) {
 	this.dob = dob;
 }
+
+//public void setDob(String dob) {
+//	DateTimeFormatter formatter = DateTimeFormat.forPattern(JSON_FORMAT);
+//	this.dob = formatter.parseDateTime(dob);
+//}
+
 
   @Override
   public boolean equals(Object o) {

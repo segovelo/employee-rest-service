@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.joda.JodaModule;
 
 
 /** 
@@ -15,8 +16,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 * @author Sebastian Vergara Losada  **/
 
 public class Utilities {
-
-	private static ObjectMapper mapper = new ObjectMapper();//JsonUtils.getObjectMapper;
+	
+	public static final String JSON_FORMAT = "yyyy-MM-dd'T'HH:mm:ss";
+	public static ObjectMapper mapper = new ObjectMapper().registerModule(new JodaModule());//JsonUtils.getObjectMapper;
 	public static <T> T createObjectFromFile(TypeReference<T> type, String filePath) {
 		T value = null;
 		
