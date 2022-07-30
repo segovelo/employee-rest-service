@@ -1,9 +1,13 @@
 package payroll;
 
 import java.util.Objects;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -16,37 +20,40 @@ import static payroll.Utilities.JSON_FORMAT;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 class Employee {
 
-  private @JsonProperty("id") @Id @GeneratedValue Long id;
+  @JsonProperty("id") @Id @GeneratedValue 
+  private Long id;
   @JsonProperty("firstName")
   private String firstName;
   @JsonProperty("lastName")
   private String lastName;
   @JsonProperty("role")
   private String role;
+  @Lob
+  @Column(name = "dob", columnDefinition="CLOB")
   @JsonFormat(shape=JsonFormat.Shape.STRING, pattern=JSON_FORMAT)
   private DateTime dob;
   
 
 public Employee() {}
 
-  public Employee(String name, String role) {
+	public Employee(String name, String role) {
+	  String[] parts = name.split(" ");
+	  this.firstName = parts[0];
+	  this.lastName = parts[1];
+	  this.role = role;
+	}
+
+
+  public Employee(String name, String role, String dob) {
+	DateTimeFormatter formatter = DateTimeFormat.forPattern(JSON_FORMAT);  
     String[] parts = name.split(" ");
     this.firstName = parts[0];
     this.lastName = parts[1];
     this.role = role;
-  }
-
-  public Employee(String firstName, String lastName, String role) {
-
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.role = role;
+    this.dob = formatter.parseDateTime(dob);
   }
   
-  
-
   public Employee(String firstName, String lastName, String role, DateTime dob) {
-	super();
 	this.firstName = firstName;
 	this.lastName = lastName;
 	this.role = role;
@@ -54,7 +61,6 @@ public Employee() {}
 }
   
   public Employee(String firstName, String lastName, String role, String dob) {
-	super();
 	DateTimeFormatter formatter = DateTimeFormat.forPattern(JSON_FORMAT);
 	this.firstName = firstName;
 	this.lastName = lastName;
@@ -105,6 +111,18 @@ public String getName() {
     this.role = role;
   }
   
+  
+//  public String getDob() {
+//	DateTimeFormatter formatter = DateTimeFormat.forPattern(JSON_FORMAT);  
+//	return formatter.print(dob);
+//}
+//
+//public void setDob(String dob) {
+//	DateTimeFormatter formatter = DateTimeFormat.forPattern(JSON_FORMAT);
+//	this.dob = formatter.parseDateTime(dob);
+//}
+
+
   public DateTime getDob() {
 	return dob;
 }
@@ -113,13 +131,7 @@ public void setDob(DateTime dob) {
 	this.dob = dob;
 }
 
-//public void setDob(String dob) {
-//	DateTimeFormatter formatter = DateTimeFormat.forPattern(JSON_FORMAT);
-//	this.dob = formatter.parseDateTime(dob);
-//}
-
-
-  @Override
+@Override
   public boolean equals(Object o) {
 
     if (this == o) return true;
@@ -136,20 +148,10 @@ public void setDob(DateTime dob) {
     return Objects.hash(this.id, this.firstName, this.lastName, this.role);
   }
 
-  @Override
-  public String toString() {
-    return "Employee{"
-        + "id="
-        + this.id
-        + ", firstName='"
-        + this.firstName
-        + '\''
-        + ", lastName='"
-        + this.lastName
-        + '\''
-        + ", role='"
-        + this.role
-        + '\''
-        + '}';
-  }
+@Override
+public String toString() {
+	return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", role=" + role + ", dob="
+			+ dob+ "]";
+}
+
 }

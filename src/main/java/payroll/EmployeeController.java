@@ -29,14 +29,11 @@ class EmployeeController {
   }
 
   // Aggregate root
-  // tag::get-aggregate-root[]
+  //tag::get-aggregate-root[]
   @GetMapping(path = "/employees")
   CollectionModel<EntityModel<Employee>> all() {
-
     List<EntityModel<Employee>> employees =
-        repository.findAll().stream() //
-            .map(assembler::toModel) //
-            .collect(Collectors.toList());
+        repository.findAll().stream().map(assembler::toModel).collect(Collectors.toList());
 
     return CollectionModel.of(
         employees, linkTo(methodOn(EmployeeController.class).all()).withSelfRel());
