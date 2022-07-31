@@ -4,6 +4,10 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.IanaLinkRelations;
@@ -16,13 +20,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import static payroll.Utilities.JSON_FORMAT;
 
 @RestController
 class EmployeeController {
 
   private final EmployeeRepository repository;
   private final EmployeeModelAssembler assembler;
-
+  private DateTimeFormatter fmt = DateTimeFormat.forPattern(JSON_FORMAT);
+  
   EmployeeController(EmployeeRepository repository, EmployeeModelAssembler assembler) {
     this.repository = repository;
     this.assembler = assembler;
@@ -34,7 +40,11 @@ class EmployeeController {
   CollectionModel<EntityModel<Employee>> all() {
     List<EntityModel<Employee>> employees =
         repository.findAll().stream().map(assembler::toModel).collect(Collectors.toList());
-
+    for(EntityModel<Employee> employee : employees) {
+    	DateTime dt = fmt.parseDateTime(employee.getContent().getDob());
+    	DateTime result = dt.hourOfDay().setCopy("00");
+    	employee.getContent().setDob( fmt.print(result));    	
+    }
     return CollectionModel.of(
         employees, linkTo(methodOn(EmployeeController.class).all()).withSelfRel());
   } // end::get-aggregate-root[]

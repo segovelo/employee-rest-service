@@ -28,10 +28,11 @@ class Employee {
   private String lastName;
   @JsonProperty("role")
   private String role;
-  @Lob
-  @Column(name = "dob", columnDefinition="CLOB")
-  @JsonFormat(shape=JsonFormat.Shape.STRING, pattern=JSON_FORMAT)
-  private DateTime dob;
+//  @Lob
+//  @Column(name = "dob", columnDefinition="CLOB")
+//  @JsonFormat(shape=JsonFormat.Shape.STRING, pattern=JSON_FORMAT)
+  @JsonProperty("dob")
+  private String dob;
   
 
 public Employee() {}
@@ -44,30 +45,20 @@ public Employee() {}
 	}
 
 
-  public Employee(String name, String role, String dob) {
-	DateTimeFormatter formatter = DateTimeFormat.forPattern(JSON_FORMAT);  
+  public Employee(String name, String role, String dob) {  
     String[] parts = name.split(" ");
     this.firstName = parts[0];
     this.lastName = parts[1];
     this.role = role;
-    this.dob = formatter.parseDateTime(dob);
+    this.dob = dob;
   }
   
-  public Employee(String firstName, String lastName, String role, DateTime dob) {
+  public Employee(String firstName, String lastName, String role, String dob) {
 	this.firstName = firstName;
 	this.lastName = lastName;
 	this.role = role;
 	this.dob = dob;
 }
-  
-  public Employee(String firstName, String lastName, String role, String dob) {
-	DateTimeFormatter formatter = DateTimeFormat.forPattern(JSON_FORMAT);
-	this.firstName = firstName;
-	this.lastName = lastName;
-	this.role = role;
-	this.dob = formatter.parseDateTime(dob);
-}
-
 
 public String getName() {
     return this.firstName + " " + this.lastName;
@@ -111,23 +102,11 @@ public String getName() {
     this.role = role;
   }
   
-  
-//  public String getDob() {
-//	DateTimeFormatter formatter = DateTimeFormat.forPattern(JSON_FORMAT);  
-//	return formatter.print(dob);
-//}
-//
-//public void setDob(String dob) {
-//	DateTimeFormatter formatter = DateTimeFormat.forPattern(JSON_FORMAT);
-//	this.dob = formatter.parseDateTime(dob);
-//}
-
-
-  public DateTime getDob() {
+public String getDob() {
 	return dob;
 }
 
-public void setDob(DateTime dob) {
+public void setDob(String dob) {
 	this.dob = dob;
 }
 
