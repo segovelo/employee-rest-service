@@ -42,7 +42,8 @@ class EmployeeController {
         repository.findAll().stream().map(assembler::toModel).collect(Collectors.toList());
     for(EntityModel<Employee> employee : employees) {
     	DateTime dt = fmt.parseDateTime(employee.getContent().getDob());
-    	DateTime result = dt.hourOfDay().setCopy("00");
+    	DateTime result = dt.minuteOfDay().setCopy("00");
+    
     	employee.getContent().setDob( fmt.print(result));    	
     }
     return CollectionModel.of(
