@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 class OrderController {
 
@@ -143,9 +142,8 @@ class OrderController {
 
   @DeleteMapping("/orders/{id}")
   ResponseEntity<?> delete(@PathVariable Long id) {
-	  if(orderRepository.existsById(id)) 
-	       orderRepository.deleteById(id);
-	  else throw new OrderNotFoundException(id) ;
-	  return new ResponseEntity<>("Order id: "+id+" deleted", HttpStatus.OK);
+    if (orderRepository.existsById(id)) orderRepository.deleteById(id);
+    else throw new OrderNotFoundException(id);
+    return new ResponseEntity<>("Order id: " + id + " deleted", HttpStatus.OK);
   }
 }

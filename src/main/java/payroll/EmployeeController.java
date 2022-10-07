@@ -1,10 +1,10 @@
 package payroll;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
+import static payroll.Utilities.JSON_FORMAT;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import static payroll.Utilities.JSON_FORMAT;
 
 @RestController
 class EmployeeController {
@@ -31,23 +30,23 @@ class EmployeeController {
   private final EmployeeModelAssembler assembler;
   private DateTimeFormatter fmt = DateTimeFormat.forPattern(JSON_FORMAT);
   Logger logger = LoggerFactory.getLogger(EmployeeController.class);
-  
+
   EmployeeController(EmployeeRepository repository, EmployeeModelAssembler assembler) {
     this.repository = repository;
     this.assembler = assembler;
   }
 
   // Aggregate root
-  //tag::get-aggregate-root[]
+  // tag::get-aggregate-root[]
   @GetMapping(path = "/employees")
   CollectionModel<EntityModel<Employee>> all() {
     List<EntityModel<Employee>> employees =
         repository.findAll().stream().map(assembler::toModel).collect(Collectors.toList());
-    for(EntityModel<Employee> employee : employees) {
-    	DateTime dt = fmt.parseDateTime(employee.getContent().getDob());
-    	DateTime result = dt.minuteOfDay().setCopy("00");
-    
-    	employee.getContent().setDob( fmt.print(result));    	
+    for (EntityModel<Employee> employee : employees) {
+      DateTime dt = fmt.parseDateTime(employee.getContent().getDob());
+      DateTime result = dt.minuteOfDay().setCopy("00");
+
+      employee.getContent().setDob(fmt.print(result));
     }
     return CollectionModel.of(
         employees, linkTo(methodOn(EmployeeController.class).all()).withSelfRel());
@@ -105,20 +104,19 @@ class EmployeeController {
 
   @DeleteMapping(path = "/employees/{id}")
   ResponseEntity<?> deleteEmployee(@PathVariable Long id) {
-	  if(repository.existsById(id))
-		  	repository.deleteById(id);
-	  else throw new EmployeeNotFoundException(id) ;
-	  return new ResponseEntity<>("Employee id: "+id+" deleted", HttpStatus.OK);
+    if (repository.existsById(id)) repository.deleteById(id);
+    else throw new EmployeeNotFoundException(id);
+    return new ResponseEntity<>("Employee id: " + id + " deleted", HttpStatus.OK);
   }
-  
+
   @GetMapping("/logs")
   public String index() {
-      logger.trace("A TRACE Message");
-      logger.debug("A DEBUG Message");
-      logger.info("An INFO Message");
-      logger.warn("A WARN Message");
-      logger.error("An ERROR Message");
+    logger.trace("A TRACE Message");
+    logger.debug("A DEBUG Message");
+    logger.info("An INFO Message");
+    logger.warn("A WARN Message");
+    logger.error("An ERROR Message");
 
-      return "Howdy! Check out the Logs to see the output...";
+    return "Howdy! Check out the Logs to see the output...";
   }
 }

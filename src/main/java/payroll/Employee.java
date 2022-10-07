@@ -1,66 +1,60 @@
 package payroll;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Lob;
-
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import static payroll.Utilities.JSON_FORMAT;
 
 @Entity
 @JsonInclude(JsonInclude.Include.NON_NULL)
 class Employee {
 
-  @JsonProperty("id") @Id @GeneratedValue 
+  @JsonProperty("id")
+  @Id
+  @GeneratedValue
   private Long id;
+
   @JsonProperty("firstName")
   private String firstName;
+
   @JsonProperty("lastName")
   private String lastName;
+
   @JsonProperty("role")
   private String role;
-//  @Lob
-//  @Column(name = "dob", columnDefinition="CLOB")
-//  @JsonFormat(shape=JsonFormat.Shape.STRING, pattern=JSON_FORMAT)
+  //  @Lob
+  //  @Column(name = "dob", columnDefinition="CLOB")
+  //  @JsonFormat(shape=JsonFormat.Shape.STRING, pattern=JSON_FORMAT)
   @JsonProperty("dob")
   private String dob;
-  
 
-public Employee() {}
+  public Employee() {}
 
-	public Employee(String name, String role) {
-	  String[] parts = name.split(" ");
-	  this.firstName = parts[0];
-	  this.lastName = parts[1];
-	  this.role = role;
-	}
+  public Employee(String name, String role) {
+    String[] parts = name.split(" ");
+    this.firstName = parts[0];
+    this.lastName = parts[1];
+    this.role = role;
+  }
 
-
-  public Employee(String name, String role, String dob) {  
+  public Employee(String name, String role, String dob) {
     String[] parts = name.split(" ");
     this.firstName = parts[0];
     this.lastName = parts[1];
     this.role = role;
     this.dob = dob;
   }
-  
-  public Employee(String firstName, String lastName, String role, String dob) {
-	this.firstName = firstName;
-	this.lastName = lastName;
-	this.role = role;
-	this.dob = dob;
-}
 
-public String getName() {
+  public Employee(String firstName, String lastName, String role, String dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.role = role;
+    this.dob = dob;
+  }
+
+  public String getName() {
     return this.firstName + " " + this.lastName;
   }
 
@@ -101,16 +95,16 @@ public String getName() {
   public void setRole(String role) {
     this.role = role;
   }
-  
-public String getDob() {
-	return dob;
-}
 
-public void setDob(String dob) {
-	this.dob = dob;
-}
+  public String getDob() {
+    return dob;
+  }
 
-@Override
+  public void setDob(String dob) {
+    this.dob = dob;
+  }
+
+  @Override
   public boolean equals(Object o) {
 
     if (this == o) return true;
@@ -127,10 +121,18 @@ public void setDob(String dob) {
     return Objects.hash(this.id, this.firstName, this.lastName, this.role);
   }
 
-@Override
-public String toString() {
-	return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", role=" + role + ", dob="
-			+ dob+ "]";
-}
-
+  @Override
+  public String toString() {
+    return "Employee [id="
+        + id
+        + ", firstName="
+        + firstName
+        + ", lastName="
+        + lastName
+        + ", role="
+        + role
+        + ", dob="
+        + dob
+        + "]";
+  }
 }
