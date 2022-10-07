@@ -8,6 +8,8 @@ import java.util.stream.Collectors;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.IanaLinkRelations;
@@ -28,6 +30,7 @@ class EmployeeController {
   private final EmployeeRepository repository;
   private final EmployeeModelAssembler assembler;
   private DateTimeFormatter fmt = DateTimeFormat.forPattern(JSON_FORMAT);
+  Logger logger = LoggerFactory.getLogger(EmployeeController.class);
   
   EmployeeController(EmployeeRepository repository, EmployeeModelAssembler assembler) {
     this.repository = repository;
@@ -106,5 +109,16 @@ class EmployeeController {
 		  	repository.deleteById(id);
 	  else throw new EmployeeNotFoundException(id) ;
 	  return new ResponseEntity<>("Employee id: "+id+" deleted", HttpStatus.OK);
+  }
+  
+  @GetMapping("/logs")
+  public String index() {
+      logger.trace("A TRACE Message");
+      logger.debug("A DEBUG Message");
+      logger.info("An INFO Message");
+      logger.warn("A WARN Message");
+      logger.error("An ERROR Message");
+
+      return "Howdy! Check out the Logs to see the output...";
   }
 }
