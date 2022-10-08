@@ -248,3 +248,533 @@ java.lang.NullPointerException: null
 2022-10-08 12:03:54,929 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 2022-10-08 12:03:54,933 INFO com.zaxxer.hikari.HikariDataSource [Thread-3] HikariPool-1 - Shutdown initiated...
 2022-10-08 12:03:54,934 INFO com.zaxxer.hikari.HikariDataSource [Thread-3] HikariPool-1 - Shutdown completed.
+2022-10-08 12:28:59,471 INFO org.springframework.boot.StartupInfoLogger [main] Starting EmployeeRestServiceApplication using Java 1.8.0_282 on HP-Z2-G4 with PID 84060 (C:\Users\Sebastian\Spring-Boot\employee-rest-service\target\classes started by Sebastian in C:\Users\Sebastian\Spring-Boot\employee-rest-service)
+2022-10-08 12:28:59,473 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.2, Spring v5.3.3
+2022-10-08 12:28:59,473 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-10-08 12:28:59,988 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-08 12:29:00,025 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 31 ms. Found 2 JPA repository interfaces.
+2022-10-08 12:29:00,394 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-08 12:29:00,400 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-08 12:29:00,401 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-10-08 12:29:00,401 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.41]
+2022-10-08 12:29:00,582 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-10-08 12:29:00,582 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1081 ms
+2022-10-08 12:29:00,714 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-10-08 12:29:00,776 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-10-08 12:29:00,802 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-08 12:29:00,890 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.27.Final
+2022-10-08 12:29:00,966 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-08 12:29:01,038 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-10-08 12:29:01,384 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-08 12:29:01,390 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-08 12:29:01,561 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-08 12:29:01,658 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-10-08 12:29:01,815 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 3 endpoint(s) beneath base path '/actuator'
+2022-10-08 12:29:01,830 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-08 12:29:01,851 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-08 12:29:01,860 INFO org.springframework.boot.StartupInfoLogger [main] Started EmployeeRestServiceApplication in 2.669 seconds (JVM running for 3.062)
+2022-10-08 12:29:01,921 INFO payroll.LoadDatabase [main] Preloading Employee [id=1, firstName=Miguel, lastName=Lacalle-Estrada, role=Purchasing Director, dob=1929-05-12T12:25:34]
+2022-10-08 12:29:01,922 INFO payroll.LoadDatabase [main] Preloading Employee [id=2, firstName=Jeffrey, lastName=Jorgensen, role=Procurement Manager, dob=1993-05-12T12:25:34]
+2022-10-08 12:29:01,923 INFO payroll.LoadDatabase [main] Preloading Employee [id=3, firstName=Amanda, lastName=Kubernetes, role=Press Director, dob=1972-05-12T12:25:34]
+2022-10-08 12:29:01,934 INFO payroll.LoadDatabase [main] Preloading Employee [id=4, firstName=Gerald, lastName=Furmanton, role=General Acccounting Manager, dob=1963-05-12T12:25:34]
+2022-10-08 12:29:01,935 INFO payroll.LoadDatabase [main] Preloading Employee [id=5, firstName=Lorraine, lastName=Richards, role=human Resources, dob=1991-05-12T12:25:34]
+2022-10-08 12:29:01,936 INFO payroll.LoadDatabase [main] Preloading Employee [id=6, firstName=Juliet, lastName=Flanagram, role=Marketing Deputy Manager, dob=1994-05-12T12:25:34]
+2022-10-08 12:29:02,004 INFO payroll.LoadDatabase [main] Preloaded Order{id=7, description='MacBook Pro', status=COMPLETED}
+2022-10-08 12:29:02,004 INFO payroll.LoadDatabase [main] Preloaded Order{id=8, description='iPhone', status=IN_PROGRESS}
+2022-10-08 12:29:02,005 INFO payroll.LoadDatabase [main] Preloaded Order{id=9, description='Hp Z2 G4 WorkStation', status=IN_PROGRESS}
+2022-10-08 12:29:02,005 INFO payroll.EmployeeRestServiceApplication [main] Employee-Rest-Service Application started successfully !
+2022-10-08 12:29:02,005 INFO payroll.EmployeeRestServiceApplication [main] Application listening on port: 8080
+2022-10-08 12:31:05,922 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-08 12:31:05,922 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-10-08 12:31:05,923 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2022-10-08 12:31:05,938 TRACE payroll.EmployeeController [http-nio-8080-exec-1] A TRACE Log
+2022-10-08 12:31:05,938 DEBUG payroll.EmployeeController [http-nio-8080-exec-1] A DEBUG Log
+2022-10-08 12:31:05,938 INFO payroll.EmployeeController [http-nio-8080-exec-1] An INFO Log
+2022-10-08 12:31:05,938 WARN payroll.EmployeeController [http-nio-8080-exec-1] A WARN Log
+2022-10-08 12:31:05,939 ERROR payroll.EmployeeController [http-nio-8080-exec-1] An ERROR Log
+2022-10-08 12:31:32,949 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-3] Shutting down ExecutorService 'applicationTaskExecutor'
+2022-10-08 12:31:32,951 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-3] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-08 12:31:32,951 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-10-08 12:31:32,955 INFO com.zaxxer.hikari.HikariDataSource [Thread-3] HikariPool-1 - Shutdown initiated...
+2022-10-08 12:31:32,957 INFO com.zaxxer.hikari.HikariDataSource [Thread-3] HikariPool-1 - Shutdown completed.
+2022-10-08 12:36:03,103 INFO org.springframework.boot.StartupInfoLogger [main] Starting EmployeeRestServiceApplication using Java 1.8.0_282 on HP-Z2-G4 with PID 124280 (C:\Users\Sebastian\Spring-Boot\employee-rest-service\target\classes started by Sebastian in C:\Users\Sebastian\Spring-Boot\employee-rest-service)
+2022-10-08 12:36:03,105 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.2, Spring v5.3.3
+2022-10-08 12:36:03,105 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-10-08 12:36:03,618 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-08 12:36:03,654 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 30 ms. Found 2 JPA repository interfaces.
+2022-10-08 12:36:04,018 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-08 12:36:04,024 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-08 12:36:04,024 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-10-08 12:36:04,025 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.41]
+2022-10-08 12:36:04,203 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-10-08 12:36:04,203 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1070 ms
+2022-10-08 12:36:04,334 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-10-08 12:36:04,395 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-10-08 12:36:04,422 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-08 12:36:04,523 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.27.Final
+2022-10-08 12:36:04,599 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-08 12:36:04,668 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-10-08 12:36:05,003 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-08 12:36:05,009 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-08 12:36:05,180 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-08 12:36:05,276 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-10-08 12:36:05,435 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 3 endpoint(s) beneath base path '/actuator'
+2022-10-08 12:36:05,449 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-08 12:36:05,471 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-08 12:36:05,479 INFO org.springframework.boot.StartupInfoLogger [main] Started EmployeeRestServiceApplication in 2.657 seconds (JVM running for 3.047)
+2022-10-08 12:36:05,551 INFO payroll.LoadDatabase [main] Preloading Employee [id=1, firstName=Miguel, lastName=Lacalle-Estrada, role=Purchasing Director, dob=1929-05-12T12:25:34]
+2022-10-08 12:36:05,552 INFO payroll.LoadDatabase [main] Preloading Employee [id=2, firstName=Jeffrey, lastName=Jorgensen, role=Procurement Manager, dob=1993-05-12T12:25:34]
+2022-10-08 12:36:05,553 INFO payroll.LoadDatabase [main] Preloading Employee [id=3, firstName=Amanda, lastName=Kubernetes, role=Press Director, dob=1972-05-12T12:25:34]
+2022-10-08 12:36:05,554 INFO payroll.LoadDatabase [main] Preloading Employee [id=4, firstName=Gerald, lastName=Furmanton, role=General Acccounting Manager, dob=1963-05-12T12:25:34]
+2022-10-08 12:36:05,555 INFO payroll.LoadDatabase [main] Preloading Employee [id=5, firstName=Lorraine, lastName=Richards, role=human Resources, dob=1991-05-12T12:25:34]
+2022-10-08 12:36:05,555 INFO payroll.LoadDatabase [main] Preloading Employee [id=6, firstName=Juliet, lastName=Flanagram, role=Marketing Deputy Manager, dob=1994-05-12T12:25:34]
+2022-10-08 12:36:05,624 INFO payroll.LoadDatabase [main] Preloaded Order{id=7, description='MacBook Pro', status=COMPLETED}
+2022-10-08 12:36:05,624 INFO payroll.LoadDatabase [main] Preloaded Order{id=8, description='iPhone', status=IN_PROGRESS}
+2022-10-08 12:36:05,625 INFO payroll.LoadDatabase [main] Preloaded Order{id=9, description='Hp Z2 G4 WorkStation', status=IN_PROGRESS}
+2022-10-08 12:36:05,625 INFO payroll.EmployeeRestServiceApplication [main] Employee-Rest-Service Application started successfully !
+2022-10-08 12:36:05,625 INFO payroll.EmployeeRestServiceApplication [main] Application listening on port: 8080
+2022-10-08 12:36:32,519 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-08 12:36:32,519 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-10-08 12:36:32,520 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2022-10-08 12:36:33,115 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-3] Shutting down ExecutorService 'applicationTaskExecutor'
+2022-10-08 12:36:33,117 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-3] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-08 12:36:33,117 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-10-08 12:36:33,121 INFO com.zaxxer.hikari.HikariDataSource [Thread-3] HikariPool-1 - Shutdown initiated...
+2022-10-08 12:36:33,122 INFO com.zaxxer.hikari.HikariDataSource [Thread-3] HikariPool-1 - Shutdown completed.
+2022-10-08 12:37:14,852 INFO org.springframework.boot.StartupInfoLogger [main] Starting EmployeeRestServiceApplication using Java 1.8.0_282 on HP-Z2-G4 with PID 118832 (C:\Users\Sebastian\Spring-Boot\employee-rest-service\target\classes started by Sebastian in C:\Users\Sebastian\Spring-Boot\employee-rest-service)
+2022-10-08 12:37:14,855 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.2, Spring v5.3.3
+2022-10-08 12:37:14,855 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-10-08 12:37:15,363 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-08 12:37:15,398 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2022-10-08 12:37:15,762 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-08 12:37:15,767 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-08 12:37:15,768 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-10-08 12:37:15,768 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.41]
+2022-10-08 12:37:15,944 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-10-08 12:37:15,945 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1064 ms
+2022-10-08 12:37:16,076 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-10-08 12:37:16,138 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-10-08 12:37:16,164 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-08 12:37:16,229 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.27.Final
+2022-10-08 12:37:16,304 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-08 12:37:16,373 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-10-08 12:37:16,708 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-08 12:37:16,714 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-08 12:37:16,884 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-08 12:37:16,979 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-10-08 12:37:17,136 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 3 endpoint(s) beneath base path '/actuator'
+2022-10-08 12:37:17,150 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-08 12:37:17,171 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-08 12:37:17,180 INFO org.springframework.boot.StartupInfoLogger [main] Started EmployeeRestServiceApplication in 2.605 seconds (JVM running for 3.002)
+2022-10-08 12:37:17,241 INFO payroll.LoadDatabase [main] Preloading Employee [id=1, firstName=Miguel, lastName=Lacalle-Estrada, role=Purchasing Director, dob=1929-05-12T12:25:34]
+2022-10-08 12:37:17,242 INFO payroll.LoadDatabase [main] Preloading Employee [id=2, firstName=Jeffrey, lastName=Jorgensen, role=Procurement Manager, dob=1993-05-12T12:25:34]
+2022-10-08 12:37:17,242 INFO payroll.LoadDatabase [main] Preloading Employee [id=3, firstName=Amanda, lastName=Kubernetes, role=Press Director, dob=1972-05-12T12:25:34]
+2022-10-08 12:37:17,243 INFO payroll.LoadDatabase [main] Preloading Employee [id=4, firstName=Gerald, lastName=Furmanton, role=General Acccounting Manager, dob=1963-05-12T12:25:34]
+2022-10-08 12:37:17,244 INFO payroll.LoadDatabase [main] Preloading Employee [id=5, firstName=Lorraine, lastName=Richards, role=human Resources, dob=1991-05-12T12:25:34]
+2022-10-08 12:37:17,245 INFO payroll.LoadDatabase [main] Preloading Employee [id=6, firstName=Juliet, lastName=Flanagram, role=Marketing Deputy Manager, dob=1994-05-12T12:25:34]
+2022-10-08 12:37:17,326 INFO payroll.LoadDatabase [main] Preloaded Order{id=7, description='MacBook Pro', status=COMPLETED}
+2022-10-08 12:37:17,327 INFO payroll.LoadDatabase [main] Preloaded Order{id=8, description='iPhone', status=IN_PROGRESS}
+2022-10-08 12:37:17,327 INFO payroll.LoadDatabase [main] Preloaded Order{id=9, description='Hp Z2 G4 WorkStation', status=IN_PROGRESS}
+2022-10-08 12:37:17,327 INFO payroll.EmployeeRestServiceApplication [main] Employee-Rest-Service Application started successfully !
+2022-10-08 12:37:17,328 INFO payroll.EmployeeRestServiceApplication [main] Application listening on port: 8080
+2022-10-08 12:37:25,115 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-08 12:37:25,115 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-10-08 12:37:25,117 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 0 ms
+2022-10-08 12:37:25,733 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-3] Shutting down ExecutorService 'applicationTaskExecutor'
+2022-10-08 12:37:25,735 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-3] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-08 12:37:25,735 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-10-08 12:37:25,740 INFO com.zaxxer.hikari.HikariDataSource [Thread-3] HikariPool-1 - Shutdown initiated...
+2022-10-08 12:37:25,741 INFO com.zaxxer.hikari.HikariDataSource [Thread-3] HikariPool-1 - Shutdown completed.
+2022-10-08 12:37:50,084 INFO org.springframework.boot.StartupInfoLogger [main] Starting EmployeeRestServiceApplication using Java 1.8.0_282 on HP-Z2-G4 with PID 95060 (C:\Users\Sebastian\Spring-Boot\employee-rest-service\target\classes started by Sebastian in C:\Users\Sebastian\Spring-Boot\employee-rest-service)
+2022-10-08 12:37:50,086 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.2, Spring v5.3.3
+2022-10-08 12:37:50,086 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-10-08 12:37:50,596 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-08 12:37:50,631 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2022-10-08 12:37:50,993 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-08 12:37:50,999 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-08 12:37:51,000 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-10-08 12:37:51,000 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.41]
+2022-10-08 12:37:51,177 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-10-08 12:37:51,177 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1064 ms
+2022-10-08 12:37:51,315 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-10-08 12:37:51,377 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-10-08 12:37:51,403 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-08 12:37:51,500 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.27.Final
+2022-10-08 12:37:51,584 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-08 12:37:51,656 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-10-08 12:37:51,997 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-08 12:37:52,003 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-08 12:37:52,173 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-08 12:37:52,268 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-10-08 12:37:52,428 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 3 endpoint(s) beneath base path '/actuator'
+2022-10-08 12:37:52,443 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-08 12:37:52,464 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-08 12:37:52,473 INFO org.springframework.boot.StartupInfoLogger [main] Started EmployeeRestServiceApplication in 2.668 seconds (JVM running for 3.06)
+2022-10-08 12:37:52,533 INFO payroll.LoadDatabase [main] Preloading Employee [id=1, firstName=Miguel, lastName=Lacalle-Estrada, role=Purchasing Director, dob=1929-05-12T12:25:34]
+2022-10-08 12:37:52,534 INFO payroll.LoadDatabase [main] Preloading Employee [id=2, firstName=Jeffrey, lastName=Jorgensen, role=Procurement Manager, dob=1993-05-12T12:25:34]
+2022-10-08 12:37:52,535 INFO payroll.LoadDatabase [main] Preloading Employee [id=3, firstName=Amanda, lastName=Kubernetes, role=Press Director, dob=1972-05-12T12:25:34]
+2022-10-08 12:37:52,536 INFO payroll.LoadDatabase [main] Preloading Employee [id=4, firstName=Gerald, lastName=Furmanton, role=General Acccounting Manager, dob=1963-05-12T12:25:34]
+2022-10-08 12:37:52,537 INFO payroll.LoadDatabase [main] Preloading Employee [id=5, firstName=Lorraine, lastName=Richards, role=human Resources, dob=1991-05-12T12:25:34]
+2022-10-08 12:37:52,537 INFO payroll.LoadDatabase [main] Preloading Employee [id=6, firstName=Juliet, lastName=Flanagram, role=Marketing Deputy Manager, dob=1994-05-12T12:25:34]
+2022-10-08 12:37:52,616 INFO payroll.LoadDatabase [main] Preloaded Order{id=7, description='MacBook Pro', status=COMPLETED}
+2022-10-08 12:37:52,617 INFO payroll.LoadDatabase [main] Preloaded Order{id=8, description='iPhone', status=IN_PROGRESS}
+2022-10-08 12:37:52,617 INFO payroll.LoadDatabase [main] Preloaded Order{id=9, description='Hp Z2 G4 WorkStation', status=IN_PROGRESS}
+2022-10-08 12:37:52,618 INFO payroll.EmployeeRestServiceApplication [main] Employee-Rest-Service Application started successfully !
+2022-10-08 12:37:52,618 INFO payroll.EmployeeRestServiceApplication [main] Application listening on port: 8080
+2022-10-08 12:39:25,829 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-08 12:39:25,830 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-10-08 12:39:25,831 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2022-10-08 12:39:26,435 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-3] Shutting down ExecutorService 'applicationTaskExecutor'
+2022-10-08 12:39:26,436 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-3] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-08 12:39:26,437 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-10-08 12:39:26,441 INFO com.zaxxer.hikari.HikariDataSource [Thread-3] HikariPool-1 - Shutdown initiated...
+2022-10-08 12:39:26,442 INFO com.zaxxer.hikari.HikariDataSource [Thread-3] HikariPool-1 - Shutdown completed.
+2022-10-08 12:39:36,865 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - There is no conversion class registered for composite conversion word [withe]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - Failed to create converter for [%withe] keyword
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:327)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:63)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:62)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:362)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at payroll.EmployeeRestServiceApplication.main(EmployeeRestServiceApplication.java:17)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - There is no conversion class registered for composite conversion word [withe]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - Failed to create converter for [%withe] keyword
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:312)
+	... 18 common frames omitted
+2022-10-08 12:39:36,868 ERROR payroll.EmployeeRestServiceApplication [main] Employee-Rest-Service Application failed :( *** 
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - There is no conversion class registered for composite conversion word [withe]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - Failed to create converter for [%withe] keyword
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:327)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:63)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:62)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:362)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at payroll.EmployeeRestServiceApplication.main(EmployeeRestServiceApplication.java:17)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - There is no conversion class registered for composite conversion word [withe]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - Failed to create converter for [%withe] keyword
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:312)
+	... 18 common frames omitted
+2022-10-08 12:40:43,334 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - There is no conversion class registered for composite conversion word [withe]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - Failed to create converter for [%withe] keyword
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:327)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:63)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:62)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:362)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at payroll.EmployeeRestServiceApplication.main(EmployeeRestServiceApplication.java:17)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - There is no conversion class registered for composite conversion word [withe]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - Failed to create converter for [%withe] keyword
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:312)
+	... 18 common frames omitted
+2022-10-08 12:40:43,337 ERROR payroll.EmployeeRestServiceApplication [main] Employee-Rest-Service Application failed :( *** 
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - There is no conversion class registered for composite conversion word [withe]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - Failed to create converter for [%withe] keyword
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:327)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:63)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:62)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:362)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at payroll.EmployeeRestServiceApplication.main(EmployeeRestServiceApplication.java:17)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - There is no conversion class registered for composite conversion word [withe]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - Failed to create converter for [%withe] keyword
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:312)
+	... 18 common frames omitted
+2022-10-08 12:41:05,040 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4c309d4d - There is no conversion class registered for composite conversion word [withe]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4c309d4d - Failed to create converter for [%withe] keyword
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:327)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:63)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:62)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:362)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at payroll.EmployeeRestServiceApplication.main(EmployeeRestServiceApplication.java:17)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4c309d4d - There is no conversion class registered for composite conversion word [withe]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4c309d4d - Failed to create converter for [%withe] keyword
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:312)
+	... 18 common frames omitted
+2022-10-08 12:41:05,043 ERROR payroll.EmployeeRestServiceApplication [main] Employee-Rest-Service Application failed :( *** 
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4c309d4d - There is no conversion class registered for composite conversion word [withe]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4c309d4d - Failed to create converter for [%withe] keyword
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:327)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:63)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:62)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:362)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at payroll.EmployeeRestServiceApplication.main(EmployeeRestServiceApplication.java:17)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4c309d4d - There is no conversion class registered for composite conversion word [withe]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4c309d4d - Failed to create converter for [%withe] keyword
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:312)
+	... 18 common frames omitted
+2022-10-08 12:42:22,151 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - There is no conversion class registered for composite conversion word [withe]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - Failed to create converter for [%withe] keyword
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:327)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:63)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:62)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:362)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at payroll.EmployeeRestServiceApplication.main(EmployeeRestServiceApplication.java:17)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - There is no conversion class registered for composite conversion word [withe]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - Failed to create converter for [%withe] keyword
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:312)
+	... 18 common frames omitted
+2022-10-08 12:42:22,154 ERROR payroll.EmployeeRestServiceApplication [main] Employee-Rest-Service Application failed :( *** 
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - There is no conversion class registered for composite conversion word [withe]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - Failed to create converter for [%withe] keyword
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:327)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:63)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:62)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:362)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at payroll.EmployeeRestServiceApplication.main(EmployeeRestServiceApplication.java:17)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - There is no conversion class registered for composite conversion word [withe]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4e3958e7 - Failed to create converter for [%withe] keyword
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:312)
+	... 18 common frames omitted
+2022-10-08 12:43:41,279 INFO org.springframework.boot.StartupInfoLogger [main] Starting EmployeeRestServiceApplication using Java 1.8.0_282 on HP-Z2-G4 with PID 128828 (C:\Users\Sebastian\Spring-Boot\employee-rest-service\target\classes started by Sebastian in C:\Users\Sebastian\Spring-Boot\employee-rest-service)
+2022-10-08 12:43:41,281 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.2, Spring v5.3.3
+2022-10-08 12:43:41,282 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-10-08 12:43:41,791 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-08 12:43:41,826 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2022-10-08 12:43:42,191 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-08 12:43:42,197 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-08 12:43:42,197 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-10-08 12:43:42,198 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.41]
+2022-10-08 12:43:42,381 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-10-08 12:43:42,382 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1073 ms
+2022-10-08 12:43:42,511 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-10-08 12:43:42,572 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-10-08 12:43:42,599 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-08 12:43:42,687 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.27.Final
+2022-10-08 12:43:42,763 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-08 12:43:42,832 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-10-08 12:43:43,171 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-08 12:43:43,177 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-08 12:43:43,349 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-08 12:43:43,444 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-10-08 12:43:43,602 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 3 endpoint(s) beneath base path '/actuator'
+2022-10-08 12:43:43,616 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-08 12:43:43,637 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-08 12:43:43,646 INFO org.springframework.boot.StartupInfoLogger [main] Started EmployeeRestServiceApplication in 2.648 seconds (JVM running for 3.043)
+2022-10-08 12:43:43,706 INFO payroll.LoadDatabase [main] Preloading Employee [id=1, firstName=Miguel, lastName=Lacalle-Estrada, role=Purchasing Director, dob=1929-05-12T12:25:34]
+2022-10-08 12:43:43,707 INFO payroll.LoadDatabase [main] Preloading Employee [id=2, firstName=Jeffrey, lastName=Jorgensen, role=Procurement Manager, dob=1993-05-12T12:25:34]
+2022-10-08 12:43:43,708 INFO payroll.LoadDatabase [main] Preloading Employee [id=3, firstName=Amanda, lastName=Kubernetes, role=Press Director, dob=1972-05-12T12:25:34]
+2022-10-08 12:43:43,709 INFO payroll.LoadDatabase [main] Preloading Employee [id=4, firstName=Gerald, lastName=Furmanton, role=General Acccounting Manager, dob=1963-05-12T12:25:34]
+2022-10-08 12:43:43,709 INFO payroll.LoadDatabase [main] Preloading Employee [id=5, firstName=Lorraine, lastName=Richards, role=human Resources, dob=1991-05-12T12:25:34]
+2022-10-08 12:43:43,710 INFO payroll.LoadDatabase [main] Preloading Employee [id=6, firstName=Juliet, lastName=Flanagram, role=Marketing Deputy Manager, dob=1994-05-12T12:25:34]
+2022-10-08 12:43:43,790 INFO payroll.LoadDatabase [main] Preloaded Order{id=7, description='MacBook Pro', status=COMPLETED}
+2022-10-08 12:43:43,790 INFO payroll.LoadDatabase [main] Preloaded Order{id=8, description='iPhone', status=IN_PROGRESS}
+2022-10-08 12:43:43,790 INFO payroll.LoadDatabase [main] Preloaded Order{id=9, description='Hp Z2 G4 WorkStation', status=IN_PROGRESS}
+2022-10-08 12:43:43,791 INFO payroll.EmployeeRestServiceApplication [main] Employee-Rest-Service Application started successfully !
+2022-10-08 12:43:43,791 INFO payroll.EmployeeRestServiceApplication [main] Application listening on port: 8080
+2022-10-08 12:44:48,029 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-08 12:44:48,029 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-10-08 12:44:48,030 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2022-10-08 12:44:48,626 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-3] Shutting down ExecutorService 'applicationTaskExecutor'
+2022-10-08 12:44:48,628 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-3] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-08 12:44:48,628 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-10-08 12:44:48,632 INFO com.zaxxer.hikari.HikariDataSource [Thread-3] HikariPool-1 - Shutdown initiated...
+2022-10-08 12:44:48,633 INFO com.zaxxer.hikari.HikariDataSource [Thread-3] HikariPool-1 - Shutdown completed.
+2022-10-08 12:44:56,350 INFO org.springframework.boot.StartupInfoLogger [main] Starting EmployeeRestServiceApplication using Java 1.8.0_282 on HP-Z2-G4 with PID 80532 (C:\Users\Sebastian\Spring-Boot\employee-rest-service\target\classes started by Sebastian in C:\Users\Sebastian\Spring-Boot\employee-rest-service)
+2022-10-08 12:44:56,352 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.2, Spring v5.3.3
+2022-10-08 12:44:56,352 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-10-08 12:44:56,867 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-08 12:44:56,903 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2022-10-08 12:44:57,268 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-08 12:44:57,273 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-08 12:44:57,274 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-10-08 12:44:57,274 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.41]
+2022-10-08 12:44:57,455 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-10-08 12:44:57,455 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1075 ms
+2022-10-08 12:44:57,588 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-10-08 12:44:57,650 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-10-08 12:44:57,676 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-08 12:44:57,763 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.27.Final
+2022-10-08 12:44:57,841 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-08 12:44:57,911 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-10-08 12:44:58,255 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-08 12:44:58,261 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-08 12:44:58,433 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-08 12:44:58,527 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-10-08 12:44:58,685 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 3 endpoint(s) beneath base path '/actuator'
+2022-10-08 12:44:58,700 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-08 12:44:58,721 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-08 12:44:58,730 INFO org.springframework.boot.StartupInfoLogger [main] Started EmployeeRestServiceApplication in 2.661 seconds (JVM running for 3.055)
+2022-10-08 12:44:58,790 INFO payroll.LoadDatabase [main] Preloading Employee [id=1, firstName=Miguel, lastName=Lacalle-Estrada, role=Purchasing Director, dob=1929-05-12T12:25:34]
+2022-10-08 12:44:58,791 INFO payroll.LoadDatabase [main] Preloading Employee [id=2, firstName=Jeffrey, lastName=Jorgensen, role=Procurement Manager, dob=1993-05-12T12:25:34]
+2022-10-08 12:44:58,792 INFO payroll.LoadDatabase [main] Preloading Employee [id=3, firstName=Amanda, lastName=Kubernetes, role=Press Director, dob=1972-05-12T12:25:34]
+2022-10-08 12:44:58,793 INFO payroll.LoadDatabase [main] Preloading Employee [id=4, firstName=Gerald, lastName=Furmanton, role=General Acccounting Manager, dob=1963-05-12T12:25:34]
+2022-10-08 12:44:58,793 INFO payroll.LoadDatabase [main] Preloading Employee [id=5, firstName=Lorraine, lastName=Richards, role=human Resources, dob=1991-05-12T12:25:34]
+2022-10-08 12:44:58,794 INFO payroll.LoadDatabase [main] Preloading Employee [id=6, firstName=Juliet, lastName=Flanagram, role=Marketing Deputy Manager, dob=1994-05-12T12:25:34]
+2022-10-08 12:44:58,875 INFO payroll.LoadDatabase [main] Preloaded Order{id=7, description='MacBook Pro', status=COMPLETED}
+2022-10-08 12:44:58,876 INFO payroll.LoadDatabase [main] Preloaded Order{id=8, description='iPhone', status=IN_PROGRESS}
+2022-10-08 12:44:58,876 INFO payroll.LoadDatabase [main] Preloaded Order{id=9, description='Hp Z2 G4 WorkStation', status=IN_PROGRESS}
+2022-10-08 12:44:58,877 INFO payroll.EmployeeRestServiceApplication [main] Employee-Rest-Service Application started successfully !
+2022-10-08 12:44:58,877 INFO payroll.EmployeeRestServiceApplication [main] Application listening on port: 8080
+2022-10-08 12:45:10,311 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-08 12:45:10,312 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-10-08 12:45:10,313 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2022-10-08 12:45:10,328 TRACE payroll.EmployeeController [http-nio-8080-exec-1] A TRACE Log
+2022-10-08 12:45:10,328 DEBUG payroll.EmployeeController [http-nio-8080-exec-1] A DEBUG Log
+2022-10-08 12:45:10,328 INFO payroll.EmployeeController [http-nio-8080-exec-1] An INFO Log
+2022-10-08 12:45:10,329 WARN payroll.EmployeeController [http-nio-8080-exec-1] A WARN Log
+2022-10-08 12:45:10,329 ERROR payroll.EmployeeController [http-nio-8080-exec-1] An ERROR Log
+2022-10-08 12:45:30,726 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-3] Shutting down ExecutorService 'applicationTaskExecutor'
+2022-10-08 12:45:30,728 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-3] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-08 12:45:30,728 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-10-08 12:45:30,732 INFO com.zaxxer.hikari.HikariDataSource [Thread-3] HikariPool-1 - Shutdown initiated...
+2022-10-08 12:45:30,734 INFO com.zaxxer.hikari.HikariDataSource [Thread-3] HikariPool-1 - Shutdown completed.
