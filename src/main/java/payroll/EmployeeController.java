@@ -29,7 +29,7 @@ class EmployeeController {
   private final EmployeeRepository repository;
   private final EmployeeModelAssembler assembler;
   private DateTimeFormatter fmt = DateTimeFormat.forPattern(JSON_FORMAT);
-  Logger logger = LoggerFactory.getLogger(EmployeeController.class);
+  private Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
   EmployeeController(EmployeeRepository repository, EmployeeModelAssembler assembler) {
     this.repository = repository;
@@ -111,11 +111,11 @@ class EmployeeController {
 
   @GetMapping("/logs")
   public String index() {
-    logger.trace("A TRACE Message");
-    logger.debug("A DEBUG Message");
-    logger.info("An INFO Message");
-    logger.warn("A WARN Message");
-    logger.error("An ERROR Message");
+    logger.trace("A TRACE Log");
+    logger.debug("A DEBUG Log");
+    logger.info("An INFO Log");
+    logger.warn("A WARN Log");
+    logger.error("An ERROR Log");
 
     return "Howdy! Check out the Logs to see the output...";
   }
