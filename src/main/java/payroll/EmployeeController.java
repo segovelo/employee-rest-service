@@ -52,6 +52,11 @@ class EmployeeController {
         employees, linkTo(methodOn(EmployeeController.class).all()).withSelfRel());
   } // end::get-aggregate-root[]
 
+  /**
+   * Return all employees
+   * @param newEmployee
+   * @return
+   */
   @PostMapping(path = "/employees")
   ResponseEntity<?> newEmployee(@RequestBody Employee newEmployee) {
 
